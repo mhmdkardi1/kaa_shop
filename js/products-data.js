@@ -2,7 +2,7 @@ const PRODUCTS_DATA = [
     // --- BAJU (1-7) ---
     { id: 1, name: "Kaos Oversize Cartoon Lucu", price: 45000, image: "assets/baju.png", category: "Baju", description: "Kaos oversize dengan sablon kartun berkualitas tinggi. Bahan katun combed premium yang adem." },
     { id: 2, name: "AETN - Tshirt Oversize Face Art", price: 38000, image: "assets/baju1.jpg", category: "Baju", description: "T-shirt premium edisi original Face Art dengan potongan oversize modern." },
-    { id: 3, name: "Kaos Baju Oversized Cowok Cewek", price: 65000, image: "assets/baju2.png", category: "Baju", description: "Atasan lengan panjang berbahan katun lembut, sangat nyaman untuk penggunaan harian." },
+    { id: 3, name: "kaos oversize tulang rusuk estetik distro pria crew", price: 65000, image: "assets/baju2.jpg", category: "Baju", description: "Atasan lengan panjang berbahan katun lembut, sangat nyaman untuk penggunaan harian." },
     { id: 4, name: "House of Smith Kaos Oversize Pria", price: 75000, image: "assets/baju3.jpg", category: "Baju", description: "Kaos dengan desain vintage look, memberikan kesan retro yang estetik." },
     { id: 5, name: "Almero T-Shirt Oversize Memory exclusive", price: 95000, image: "assets/baju4.jpg", category: "Baju", description: "Polo shirt dengan potongan longgar, kesan semi-formal namun tetap santai." },
     { id: 6, name: "OOTDSUPPLY Oversized Tshirt Future Steel Black", price: 55000, image: "assets/baju5.jpg", category: "Baju", description: "Tanktop atletik yang nyaman untuk olahraga atau cuaca panas." },
