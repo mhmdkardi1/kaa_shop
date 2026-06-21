@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Pembayaran - kaa_shop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">kaa<span>shop</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Produk</a></li>
+                    <li><a href="profile.html">Akun Saya</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons">
+                <a href="login.html" title="Login"><i class="fas fa-user"></i></a>
+                <a href="cart.html" class="cart-icon" title="Keranjang">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main style="max-width: 1200px; margin: 50px auto; padding: 0 20px;">
+        <h2 style="margin-bottom: 30px;">Proses Checkout Pesanan</h2>
+
+        <form id="checkout-form" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
+            
+            <div style="flex: 2; min-width: 500px; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <h3 style="margin-bottom: 20px; color: #2f3542; border-bottom: 1px solid #eee; padding-bottom: 10px;">Informasi Pengiriman</h3>
+                
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 5px;">Nama Penerima</label>
+                    <input type="text" id="shipping-name" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; outline: none;">
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 5px;">Nomor Telepon/WhatsApp</label>
+                    <input type="tel" id="shipping-phone" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; outline: none;">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 5px;">Alamat Lengkap Rumah</label>
+                    <textarea id="shipping-address" rows="4" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; outline: none; font-family: inherit;"></textarea>
+                </div>
+
+                <h3 style="margin-bottom: 20px; color: #2f3542; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 30px;">Metode Pembayaran</h3>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <label style="display: flex; align-items: center; gap: 10px; background: #f8f9fa; padding: 15px; border-radius: 6px; cursor: pointer; border: 1px solid #eee;">
+                        <input type="radio" name="payment-method" value="bank_transfer" checked style="accent-color: #ff4757;">
+                        <span>Transfer Bank (Virtual Account Otomatis)</span>
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 10px; background: #f8f9fa; padding: 15px; border-radius: 6px; cursor: pointer; border: 1px solid #eee;">
+                        <input type="radio" name="payment-method" value="cod" style="accent-color: #ff4757;">
+                        <span>Bayar di Tempat (COD)</span>
+                    </label>
+                </div>
+            </div>
+
+            <div style="flex: 1; min-width: 300px; background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); position: sticky; top: 100px;">
+                <h3 style="margin-bottom: 20px; color: #2f3542; border-bottom: 1px solid #eee; padding-bottom: 10px;">Total Pesanan</h3>
+                
+                <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                    <span style="color: #777;">Subtotal Produk</span>
+                    <span id="checkout-subtotal">Rp 0</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                    <span style="color: #777;">Ongkos Kirim (Flat)</span>
+                    <span id="checkout-shipping-fee">Rp 20.000</span>
+                </div>
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 30px; font-weight: 700; font-size: 18px;">
+                    <span>Total Bayar</span>
+                    <span id="checkout-total-grand" style="color: #ff4757;">Rp 0</span>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; text-align: center; font-size: 16px;">Konfirmasi & Buat Pesanan</button>
+            </div>
+
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 kaa_shop. Built professionally for portfolio deployment.</p>
+        </div>
+    </footer>
+
+   <script src="js/main.js"></script>
+    <script src="js/checkout.js"></script> </body>
+</html>

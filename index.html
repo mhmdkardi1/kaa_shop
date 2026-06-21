@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaa_shop - Solusi Belanja Modern</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body style="background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #2f3542; margin: 0;">
+
+    <header style="background: white; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <div class="navbar" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px;">
+            <a href="index.html" class="logo" style="font-size: 24px; font-weight: 800; text-decoration: none; color: #2f3542; letter-spacing: 0.5px;">kaa<span style="color: #ff4757;">shop</span></a>
+            <nav>
+                <ul style="display: flex; list-style: none; gap: 30px; margin: 0; padding: 0;">
+                    <li><a href="index.html" class="active" style="text-decoration: none; color: #ff4757; font-weight: 600; border-bottom: 2px solid #ff4757; padding-bottom: 5px;">Home</a></li>
+                    <li><a href="shop.html" style="text-decoration: none; color: #57606f; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#ff4757'" onmouseout="this.style.color='#57606f'">Produk</a></li>
+                    <li><a href="profile.html" style="text-decoration: none; color: #57606f; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#ff4757'" onmouseout="this.style.color='#57606f'">Akun Saya</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons" style="display: flex; align-items: center; gap: 20px;">
+                <a href="login.html" title="Login" style="color: #2f3542; font-size: 18px; transition: color 0.3s;" onmouseover="this.style.color='#ff4757'" onmouseout="this.style.color='#2f3542'"><i class="fas fa-user"></i></a>
+                <a href="cart.html" class="cart-icon" title="Keranjang" style="color: #2f3542; font-size: 18px; position: relative; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#ff4757'" onmouseout="this.style.color='#2f3542'">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count" style="position: absolute; top: -10px; right: -12px; background: #ff4757; color: white; font-size: 11px; font-weight: bold; padding: 2px 6px; border-radius: 50%; box-shadow: 0 2px 5px rgba(255,71,87,0.4);">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section style="background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('assets/hero-bg.jpg') no-repeat center center/cover; height: 75vh; display: flex; align-items: center; justify-content: center; color: white; text-align: center; padding: 0 20px;">
+        <div style="max-width: 700px; animation: fadeIn 1s ease-in-out;">
+            <span style="text-transform: uppercase; letter-spacing: 3px; font-size: 13px; font-weight: 700; color: #ffffff; background: rgba(255,255,255,0.1); padding: 6px 16px; border-radius: 20px; display: inline-block; margin-bottom: 20px;">Koleksi Baru 2026</span>
+            <h1 style="font-size: 48px; margin: 0 0 15px 0; font-weight: 800; line-height: 1.2; letter-spacing: -0.5px;">Gaya Baru, Semangat Baru</h1>
+            <p style="font-size: 18px; margin-bottom: 35px; color: #f1f2f6; font-weight: 400; line-height: 1.6;">Temukan koleksi produk fashion original terbaik dengan standar kualitas premium dan penawaran eksklusif.</p>
+            <a href="shop.html" class="btn" style="background: #ff4757; color: white; text-decoration: none; padding: 15px 35px; font-weight: 600; border-radius: 6px; font-size: 16px; box-shadow: 0 4px 15px rgba(255,71,87,0.4); transition: transform 0.3s, background 0.3s; display: inline-block;" onmouseover="this.style.transform='scale(1.05)'; this.style.background='#ff6b81'" onmouseout="this.style.transform='scale(1)'; this.style.background='#ff4757'">Jelajahi Produk <i class="fas fa-arrow-right" style="margin-left: 8px; font-size: 14px;"></i></a>
+        </div>
+    </section>
+
+    <section style="max-width: 1200px; margin: -50px auto 0 auto; padding: 0 20px; position: relative; z-index: 5;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+            <div style="display: flex; align-items: center; gap: 15px; padding: 10px;">
+                <i class="fas fa-truck" style="font-size: 30px; color: #ff4757;"></i>
+                <div>
+                    <h4 style="margin: 0; font-size: 16px; font-weight: 700;">Gratis Ongkir</h4>
+                    <p style="margin: 3px 0 0 0; font-size: 13px; color: #747d8c;">Radius kota tertentu & min. belanja</p>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 15px; padding: 10px;">
+                <i class="fas fa-shield-alt" style="font-size: 30px; color: #ff4757;"></i>
+                <div>
+                    <h4 style="margin: 0; font-size: 16px; font-weight: 700;">Pembayaran Aman</h4>
+                    <p style="margin: 3px 0 0 0; font-size: 13px; color: #747d8c;">Jaminan 100% aman & terverifikasi</p>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 15px; padding: 10px;">
+                <i class="fas fa-undo" style="font-size: 30px; color: #ff4757;"></i>
+                <div>
+                    <h4 style="margin: 0; font-size: 16px; font-weight: 700;">Pengembalian 14 Hari</h4>
+                    <p style="margin: 3px 0 0 0; font-size: 13px; color: #747d8c;">Jika produk tidak sesuai ukuran</p>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 15px; padding: 10px;">
+                <i class="fas fa-headset" style="font-size: 30px; color: #ff4757;"></i>
+                <div>
+                    <h4 style="margin: 0; font-size: 16px; font-weight: 700;">Dukungan 24/7</h4>
+                    <p style="margin: 3px 0 0 0; font-size: 13px; color: #747d8c;">Hubungi cs kami kapan pun dibutuhkan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main style="max-width: 1200px; margin: 70px auto; padding: 0 20px;">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h2 class="section-title" style="font-size: 32px; font-weight: 800; margin-bottom: 10px; position: relative; display: inline-block;">Produk Unggulan Kami</h2>
+            <p style="color: #747d8c; font-size: 16px; margin: 0;">Pilihan produk terbaik yang paling banyak dicari minggu ini</p>
+            <div style="width: 60px; height: 3px; background: #ff4757; margin: 15px auto 0 auto; border-radius: 2px;"></div>
+        </div>
+        
+        <div id="featured-products" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px;">
+            <p style="text-align: center; grid-column: 1/-1; color: #747d8c; padding: 40px 0;"><i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i> Menyinkronkan data katalog produk...</p>
+        </div>
+        
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="shop.html" style="text-decoration: none; border: 2px solid #2f3542; color: #2f3542; padding: 12px 30px; font-weight: 600; border-radius: 6px; transition: all 0.3s; display: inline-block;" onmouseover="this.style.background='#2f3542'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#2f3542'">Lihat Semua Produk</a>
+        </div>
+    </main>
+
+    <section style="background: #ffffff; padding: 50px 20px; border-top: 1px solid #eee; box-shadow: inset 0 10px 20px rgba(0,0,0,0.02);">
+        <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+            <h3 style="font-size: 24px; font-weight: 700; color: #2f3542; margin: 0 0 15px 0;">Tentang Projek kaa_shop</h3>
+            <p style="font-size: 15px; color: #57606f; line-height: 1.8; max-width: 850px; margin: 0 auto; text-align: justify; background: #f8f9fa; padding: 25px; border-radius: 8px; border-left: 4px solid #ff4757;">
+    <strong>kaa_shop</strong> adalah platform <em>e-commerce</em> fashion modern berbasis <strong>Business-to-Consumer (B2C)</strong> yang dikembangkan sebagai proyek portofolio profesional. Proyek ini bertujuan mengimplementasikan sistem transaksi retail langsung ke konsumen secara responsif, interaktif, dan bebas dari kendala teknis.<br><br>
+    
+    <strong>Filosofi Logo (Gen Z Oriented):</strong> Gaya penulisan <em>lowercase</em> dan penggunaan <em>underscore</em> pada brand <strong>kaa_shop</strong> menegaskan identitas digital yang kasual, mengusung konsep <em>aesthetic-minimalism</em> yang sangat dekat dengan preferensi Generasi Z. Penggunaan warna aksen merah cerah melambangkan energi, <em>boldness</em> dalam mengekspresikan diri, serta komitmen platform dalam memberikan kemudahan transaksi yang instan, responsif, dan adaptif terhadap perputaran tren fashion modern.<br><br>
+    
+    <strong>Sejarah & Manfaat:</strong> Didirikan secara konseptual pada tahun 2026, kaa_shop lahir dari riset pemecahan masalah terhadap performa web retail yang sering mengalami malafungsi sinkronisasi data. Pengembangan platform ini fokus pada alur transaksi yang mulus—mulai dari manajemen katalog produk, sinkronisasi <em>real-time</em> keranjang belanja menggunakan <em>Local Storage</em> berbasis JavaScript, hingga akurasi kalkulasi halaman <em>checkout</em>. Melalui proyek ini, kaa_shop berhasil menjadi aset portofolio digital siap deploy yang memenuhi standar industri teknologi web terkini.
+</p>
+        </div>
+    </section>
+
+    <footer style="background: #2f3542; color: #a4b0be; padding: 40px 20px; text-align: center; border-top: 5px solid #ff4757;">
+        <div class="footer-container" style="max-width: 1200px; margin: 0 auto;">
+            <h3 style="color: white; margin-bottom: 15px; font-size: 22px; font-weight: 700;">kaa<span style="color: #ff4757;">shop</span></h3>
+            <p style="max-width: 500px; margin: 0 auto 25px auto; font-size: 14px; line-height: 1.6;">Platform e-commerce modern terpercaya untuk memenuhi segala kebutuhan fashion harian Anda.</p>
+            <hr style="border: 0; border-top: 1px solid #57606f; max-width: 150px; margin-bottom: 25px;">
+            <p style="font-size: 13px; margin: 0;">&copy; 2026 kaa_shop. Built professionally for portfolio deployment.</p>
+        </div>
+    </footer>
+
+    <script src="js/products-data.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const container = document.getElementById('featured-products');
+            
+            if (container && typeof PRODUCTS_DATA !== 'undefined' && PRODUCTS_DATA.length > 0) {
+                container.innerHTML = ''; 
+                
+                const featured = PRODUCTS_DATA.slice(0, 4);
+                
+                featured.forEach(product => {
+                    const card = document.createElement('div');
+                    card.style.background = 'white';
+                    card.style.borderRadius = '8px';
+                    card.style.overflow = 'hidden';
+                    card.style.boxShadow = '0 4px 15px rgba(0,0,0,0.03)';
+                    card.style.transition = 'transform 0.3s, box-shadow 0.3s';
+                    card.style.display = 'flex';
+                    card.style.flexDirection = 'column';
+                    
+                    card.onmouseover = function() {
+                        this.style.transform = 'translateY(-5px)';
+                        this.style.boxShadow = '0 10px 25px rgba(0,0,0,0.08)';
+                    };
+                    card.onmouseout = function() {
+                        this.style.transform = 'translateY(0)';
+                        this.style.boxShadow = '0 4px 15px rgba(0,0,0,0.03)';
+                    };
+                    
+                    card.innerHTML = `
+                        <div style="position: relative; overflow: hidden; height: 280px; background: #f1f2f6;">
+                            <img src="${product.image}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <h3 style="margin: 0 0 8px 0; font-size: 16px; font-weight: 700; color: #2f3542; line-height: 1.4;">${product.name}</h3>
+                                <p style="font-size: 15px; font-weight: 700; color: #ff4757; margin: 0 0 15px 0;">Rp ${product.price.toLocaleString('id-ID')}</p>
+                            </div>
+                            <a href="product-detail.html?id=${product.id}" style="text-align: center; text-decoration: none; background: #2f3542; color: white; padding: 10px; font-size: 14px; font-weight: 600; border-radius: 4px; transition: background 0.3s;" onmouseover="this.style.background='#ff4757'" onmouseout="this.style.background='#2f3542'">Lihat Detail</a>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            } else if(container) {
+                container.innerHTML = `<p style="text-align: center; grid-column: 1/-1; color: #ff4757;">Gagal memuat katalog produk. Periksa kembali file 'products-data.js'.</p>`;
+            }
+        });
+    </script>
+</body>
+</html>

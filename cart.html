@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang Belanja - kaa_shop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">kaa<span>shop</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Produk</a></li>
+                    <li><a href="profile.html">Akun Saya</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons">
+                <a href="login.html" title="Login"><i class="fas fa-user"></i></a>
+                <a href="cart.html" class="cart-icon" title="Keranjang">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main style="max-width: 1200px; margin: 50px auto; padding: 0 20px;">
+        <h2 style="margin-bottom: 30px;">Keranjang Belanja Anda</h2>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start;">
+            
+            <div style="flex: 2; min-width: 600px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid #eee;">
+                            <th style="padding-bottom: 15px;">Produk</th>
+                            <th style="padding-bottom: 15px;">Harga</th>
+                            <th style="padding-bottom: 15px; text-align: center;">Jumlah</th>
+                            <th style="padding-bottom: 15px;">Subtotal</th>
+                            <th style="padding-bottom: 15px; text-align: center;">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-table-body">
+                        </tbody>
+                </table>
+            </div>
+
+            <div style="flex: 1; min-width: 300px; background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <h3 style="margin-bottom: 20px; color: #2f3542; border-bottom: 1px solid #eee; padding-bottom: 10px;">Ringkasan Belanja</h3>
+                
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: 500;">
+                    <span>Total Harga Barang</span>
+                    <span id="cart-total-price">Rp 0</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 30px; font-weight: 500; color: #777; font-size: 14px;">
+                    <span>Biaya Pengiriman</span>
+                    <span>Dihitung saat checkout</span>
+                </div>
+
+                <a id="btn-proceed-to-checkout" class="btn" style="width: 100%; text-align: center; display: block; cursor: pointer;">
+    Lanjut ke Pembayaran
+</a>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 kaa_shop. Built professionally for portfolio deployment.</p>
+        </div>
+    </footer>
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>

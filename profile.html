@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Akun - ShopEase</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">Shop<span>Ease</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Produk</a></li>
+                    <li><a href="profile.html" class="active">Akun Saya</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons">
+                <a href="login.html" title="Login"><i class="fas fa-user"></i></a>
+                <a href="cart.html" class="cart-icon" title="Keranjang">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main style="max-width: 1200px; margin: 50px auto; padding: 0 20px;">
+        <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
+            
+            <div style="flex: 1; min-width: 280px; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center;">
+                <div style="width: 100px; height: 100px; background: #f1f2f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                    <i class="fas fa-user-circle" style="font-size: 64px; color: #a4b0be;"></i>
+                </div>
+                <h3 id="profile-name" style="color: #2f3542; margin-bottom: 5px;">Nama Pengguna</h3>
+                <p id="profile-email" style="color: #747d8c; font-size: 14px; margin-bottom: 30px;">email@contoh.com</p>
+                
+                <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 20px;">
+                
+                <button id="btn-logout" class="btn" style="width: 100%; background: #747d8c; font-size: 14px; padding: 10px 0;">
+                    <i class="fas fa-sign-out-alt"></i> Keluar Aplikasi
+                </button>
+            </div>
+
+            <div style="flex: 2.5; min-width: 500px; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                <h3 style="margin-bottom: 25px; color: #2f3542; border-bottom: 1px solid #eee; padding-bottom: 10px;">Riwayat Pesanan Anda</h3>
+                
+                <div id="order-history-container" style="display: flex; flex-direction: column; gap: 20px;">
+                    <p style="color: #777; text-align: center; padding: 20px 0;">Memuat riwayat transaksi...</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 ShopEase. Built professionally for portfolio deployment.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 1. Proteksi Halaman: Cek token login
+            const token = localStorage.getItem('userToken');
+            if (!token) {
+                alert("Sesi tidak ditemukan. Silakan login terlebih dahulu.");
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // 2. Ambil data user yang aktif dari localStorage (Hasil set item dari loginForm)
+            const sessionUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
+            if (sessionUser) {
+                // Pasang nama dan email asli hasil register/login ke komponen HTML
+                document.getElementById('profile-name').textContent = sessionUser.name;
+                document.getElementById('profile-email').textContent = sessionUser.email;
+            } else {
+                // Cadangan jika data object tidak sengaja terhapus
+                document.getElementById('profile-name').textContent = "Pelanggan ShopEase";
+                document.getElementById('profile-email').textContent = "user@shopease.com";
+            }
+
+            // 3. Render list riwayat transaksi
+            renderOrderHistory();
+
+            // 4. Logika Tombol Logout (Menghapus seluruh session aktif)
+            document.getElementById('btn-logout').addEventListener('click', function() {
+                localStorage.removeItem('userToken'); 
+                localStorage.removeItem('loggedInUser'); // Hapus data user login
+                alert("Anda telah keluar dari akun.");
+                window.location.href = 'index.html';
+            });
+        });
+
+        function renderOrderHistory() {
+    const container = document.getElementById('order-history-container');
+    
+    // SEKARANG MEMBACA DATA NYATA HASIL CHECKOUT:
+    const orders = JSON.parse(localStorage.getItem('orderHistory')) || [];
+
+    if (orders.length === 0) {
+        container.innerHTML = '<p style="color: #777; text-align: center; padding: 20px 0;">Belum ada riwayat transaksi.</p>';
+        return;
+    }
+
+    container.innerHTML = '';
+    orders.forEach(order => {
+        const card = `
+            <div style="border: 1px solid #eee; border-radius: 6px; padding: 20px; display: flex; justify-content: space-between; align-items: center; background: #f8f9fa;">
+                <div>
+                    <span style="font-size: 12px; color: #747d8c; font-weight: bold; display: block; margin-bottom: 4px;">ID PESANAN: ${order.id}</span>
+                    <h4 style="color: #2f3542; margin-bottom: 4px;">Total Bayar: Rp ${order.total.toLocaleString('id-ID')}</h4>
+                    <span style="font-size: 13px; color: #a4b0be;">Tanggal Transaksi: ${order.date}</span>
+                </div>
+                <div>
+                    <span style="background: #2ed573; color: white; font-weight: bold; font-size: 12px; padding: 6px 12px; border-radius: 20px; text-transform: uppercase;">
+                        ${order.status}
+                    </span>
+                </div>
+            </div>
+        `;
+        container.innerHTML += card;
+    });
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Produk - ShopEase</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">Shop<span>Ease</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html" class="active">Produk</a></li>
+                    <li><a href="profile.html">Akun Saya</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons">
+                <a href="login.html" title="Login"><i class="fas fa-user"></i></a>
+                <a href="cart.html" class="cart-icon" title="Keranjang">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+    <h2>Semua Produk</h2>
+    <select id="category-filter" style="padding: 8px 15px; border-radius: 6px; border: 1px solid #ddd; outline: none; font-weight: 600; cursor: pointer;">
+        <option value="all">Semua Kategori</option>
+        <option value="Baju">Baju</option>
+        <option value="Celana">Celana</option>
+        <option value="Sepatu">Sepatu</option>
+        <option value="Aksesoris">Aksesoris</option>
+        <option value="Jaket">Jaket</option>
+    </select>
+</div>
+
+        <div id="product-list-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+            
+            <!-- <div class="product-card" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
+                <img src="assets/baju.png" alt="Sepatu Keren" style="width: 100%; height: 250px; object-fit: cover;">
+                <div style="padding: 20px;">
+                    <h3 style="font-size: 18px; margin-bottom: 10px; color: #2f3542;">Kaos Baju Oversize Cartoon kartun Lucu</h3>
+                    <p style="color: #ff4757; font-weight: 700; font-size: 16px; margin-bottom: 15px;">Rp 450.000</p>
+                    <a href="product-detail.html?id=1" class="btn" style="width: 100%; text-align: center; font-size: 14px; padding: 10px 0;">Lihat Detail</a>
+                </div>
+            </div>
+
+            <div class="product-card" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
+                <img src="assets/baju1.jpg" alt="Jaket Denim" style="width: 100%; height: 250px; object-fit: cover;">
+                <div style="padding: 20px;">
+                    <h3 style="font-size: 18px; margin-bottom: 10px; color: #2f3542;">AETN - Tshirt Oversize Face Art Original</h3>
+                    <p style="color: #ff4757; font-weight: 700; font-size: 16px; margin-bottom: 15px;">Rp 380.000</p>
+                    <a href="product-detail.html?id=2" class="btn" style="width: 100%; text-align: center; font-size: 14px; padding: 10px 0;">Lihat Detail</a>
+                </div>
+            </div> -->
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 ShopEase. Built professionally for portfolio deployment.</p>
+        </div>
+    </footer>
+
+    <script src="js/products-data.js"></script> 
+<script src="js/main.js"></script>         
+<script src="js/shop.js"></script>
+</body>
+</html>
