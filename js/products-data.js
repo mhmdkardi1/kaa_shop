@@ -15,7 +15,7 @@ const PRODUCTS_DATA = [
     { id: 10, name: "Celana pendek cargo pria bahan fleece hitam ", price: 145000, image: "assets/celana2.png", category: "Celana", description: "Celana chino berbahan katun twill yang fleksibel dan nyaman dipakai." },
     { id: 11, name: "Celana Parast Cargo Pendek Online Terbaik", price: 195000, image: "assets/celana3.png", category: "Celana", description: "Jeans dengan bahan denim kaku namun tetap longgar untuk kenyamanan bergerak." },
     { id: 12, name: "EDC BY ESPRIT STRETCH JEANS", price: 175000, image: "assets/celana4.jpg", category: "Celana", description: "Celana jogger cargo dengan bahan ripstop yang sangat awet dan tahan robek." },
-    { id: 13, name: "Kalibre Celana Panjang Cargo Coca-Cola Mocca", price: 110000, image: "assets/celana5.jpeg", category: "Celana", description: "Celana pendek denim dengan warna raw indigo yang ikonik." },
+    { id: 13, name: "Celana Pendek Kargo Khaki Untuk Pria ", price: 110000, image: "assets/celanaa.png", category: "Celana", description: "Celana pendek denim dengan warna raw indigo yang ikonik." },
     { id: 14, name: "Celana kargo Celana kain Chino Jeans", price: 210000, image: "assets/celana5.png", category: "Celana", description: "Celana bahan dengan aksen lipatan depan untuk tampilan clean look." },
 
     // --- SEPATU (15-21) ---
