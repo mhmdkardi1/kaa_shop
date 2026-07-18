@@ -1,7 +1,7 @@
 // js/main.js
 
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("ShopEase App Berhasil Dimuat...");
+    console.log("Kaa_Shop App Berhasil Dimuat...");
     
     checkUserSession();
     updateCartBadge();
